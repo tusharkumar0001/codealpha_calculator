@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Advanced Calculator</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div class="calculator" role="application" aria-label="Advanced calculator">
+        <div class="main">
+            <div class="display" id="display">
+                <div class="expr" id="expression" aria-live="polite"></div>
+                <div class="result" id="result" aria-live="polite">0</div>
+            </div>
+
+            <div class="row" id="button-grid">
+                <!-- Row 1 -->
+                <button class="btn func" data-action="clear">C</button>
+                <button class="btn func" data-action="back">⌫</button>
+                <button class="btn func" data-insert="(">(</button>
+                <button class="btn func" data-insert=")">)</button>
+                <button class="btn func" data-action="mode">DEG</button>
+                <button class="btn op" data-action="percent">%</button>
+
+                <!-- Row 2 -->
+                <button class="btn func" data-action="mc">MC</button>
+                <button class="btn func" data-action="mr">MR</button>
+                <button class="btn func" data-action="mplus">M+</button>
+                <button class="btn func" data-action="mminus">M-</button>
+                <button class="btn func" data-insert="^">xʸ</button>
+                <button class="btn op" data-action="sqrt">√</button>
+
+                <!-- Row 3 -->
+                <button class="btn" data-insert="7">7</button>
+                <button class="btn" data-insert="8">8</button>
+                <button class="btn" data-insert="9">9</button>
+                <button class="btn op" data-insert="/">÷</button>
+                <button class="btn func" data-action="sin">sin</button>
+                <button class="btn func" data-action="asin">asin</button>
+
+                <!-- Row 4 -->
+                <button class="btn" data-insert="4">4</button>
+                <button class="btn" data-insert="5">5</button>
+                <button class="btn" data-insert="6">6</button>
+                <button class="btn op" data-insert="*">×</button>
+                <button class="btn func" data-action="cos">cos</button>
+                <button class="btn func" data-action="acos">acos</button>
+
+                <!-- Row 5 -->
+                <button class="btn" data-insert="1">1</button>
+                <button class="btn" data-insert="2">2</button>
+                <button class="btn" data-insert="3">3</button>
+                <button class="btn op" data-insert="-">−</button>
+                <button class="btn func" data-action="tan">tan</button>
+                <button class="btn func" data-action="atan">atan</button>
+
+                <!-- Row 6 -->
+                <button class="btn" data-insert="0">0</button>
+                <button class="btn" data-insert=".">.</button>
+                <button class="btn" data-insert="," hidden>,</button>
+                <button class="btn op" data-insert="+">+</button>
+                <button class="btn func" data-action="log">log</button>
+                <button class="btn func" data-action="ln">ln</button>
+
+                <!-- Row 7 -->
+                <button class="btn func wide" data-action="fact">n!</button>
+                <button class="btn func" data-action="pi">π</button>
+                <button class="btn equals wide" data-action="equals">=</button>
+            </div>
+
+            <footer>Keyboard: numbers, + - * / ( ) Enter =, Backspace. Shift+^ for exponent. Built with plain
+                HTML/CSS/JS.</footer>
+        </div>
+
+        <aside class="side">
+            <div class="panel">
+                <div class="title">History</div>
+                <div class="history" id="historyList" aria-live="polite"></div>
+                <div style="margin-top:8px; display:flex; gap:8px;"><button class="btn func"
+                        id="clearHistory">Clear</button><button class="btn func" id="copyLast">Copy</button></div>
+            </div>
+
+            <div class="panel">
+                <div class="title">Memory</div>
+                <div class="mem">
+                    <div id="memValue">M: 0</div>
+                </div>
+                <div style="margin-top:8px; display:flex; gap:8px;"><button class="btn func"
+                        id="memStore">Store</button><button class="btn func" id="memClear">Clear</button></div>
+            </div>
+
+            <div class="panel">
+                <div class="title">Settings</div>
+                <div class="controls">
+                    <div class="switch"><label>Angle</label><select id="angleMode">
+                            <option>DEG</option>
+                            <option>RAD</option>
+                        </select></div>
+                    <div class="switch"><label>Precision</label><select id="precision">
+                            <option>6</option>
+                            <option>8</option>
+                            <option>12</option>
+                        </select></div>
+                    <div class="switch"><label>Theme</label><select id="theme">
+                            <option>Dark</option>
+                            <option>Light</option>
+                        </select></div>
+                </div>
+            </div>
+
+        </aside>
+    </div>
+
+
+</body>
+<script src="script.js"></script>
+</html>
